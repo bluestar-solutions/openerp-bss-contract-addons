@@ -22,28 +22,27 @@
 from openerp.osv import fields, osv
 import random
 from datetime import datetime
-from openerp.tools.translate import _
 
 class bss_contract_fix(osv.osv):
     _inherit = "account.analytic.account"
     
     def action_sum_of_fields(self, cr, uid, ids, context=None):
-        self.write(cr, uid, context['active_ids'], {'need_reprocess' : random.randint(0,100)})
+        self.write(cr, uid, context['active_ids'], {'need_reprocess': random.randint(0,100)})
     
     def _toinvoice_aprox(self, cr, uid, ids, name, arg, context=None):
         totals = super(bss_contract_fix, self)._sum_of_fields(cr, uid, ids, name, arg, context)
         res = {}
         
-        for id,content in totals.iteritems():
-            res[id] = content['toinvoice_total']
+        for oid, content in totals.iteritems():
+            res[oid] = content['toinvoice_total']
             
         return res
     
     def _last_reprocess(self, cr, uid, ids, name, arg, context=None):
         res = {}
         
-        for id in ids:
-            res[id] = datetime.now().isoformat(' ')
+        for oid in ids:
+            res[oid] = datetime.now().isoformat(' ')
             
         return res
     
@@ -53,8 +52,6 @@ class bss_contract_fix(osv.osv):
         'need_reprocess' : fields.integer("Need reprocess"),
         'last_reprocess' : fields.function(_last_reprocess, type="datetime", multi=False, string="Last Reprocess",
                                             store = {'account.analytic.account': (lambda self, cr, uid, ids, context=None: ids, ['need_reprocess'], 10)})
-    
-    #fields.datetime("Last reprocess"),
     }
 
 bss_contract_fix()
