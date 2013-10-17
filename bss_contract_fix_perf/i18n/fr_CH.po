@@ -1,0 +1,49 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* bss_contract_fix_perf
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-10-14 11:51+0000\n"
+"PO-Revision-Date: 2013-10-17 16:12+0200\n"
+"Last-Translator: Patrick <patrick.tombez@blues2.ch>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: fr_CH\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Pootle 2.5.0\n"
+"X-POOTLE-MTIME: 1382019140.0\n"
+
+#. module: bss_contract_fix_perf
+#: model:ir.actions.server,name:bss_contract_fix_perf.action_reprocess_total_toinvoice
+msgid "Reprocess total to invoice"
+msgstr "Recalculer le total à facturer"
+
+#. module: bss_contract_fix_perf
+#: field:account.analytic.account,last_reprocess:0
+msgid "Last Reprocess"
+msgstr "Dernière actualisation"
+
+#. module: bss_contract_fix_perf
+#: help:account.analytic.account,toinvoice_total_aprox:0
+msgid " Sum of everything that could be invoiced for this contract."
+msgstr "Somme de tout ce qui peut être facturé sur ce contrat."
+
+#. module: bss_contract_fix_perf
+#: model:ir.model,name:bss_contract_fix_perf.model_account_analytic_account
+msgid "Analytic Account"
+msgstr "Contrat"
+
+#. module: bss_contract_fix_perf
+#: field:account.analytic.account,toinvoice_total_aprox:0
+msgid "Total to Invoice"
+msgstr "Total à facturer"
+
+#. module: bss_contract_fix_perf
+#: field:account.analytic.account,need_reprocess:0
+msgid "Need reprocess"
+msgstr "Actualisation requise"
