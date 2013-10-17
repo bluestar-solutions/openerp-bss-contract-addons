@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+		<record model="ir.actions.server" id="action_reprocess_total_toinvoice">
+			<field name="name">Reprocess total to invoice</field>
+			<field name="model_id" ref="account_analytic_analysis.model_account_analytic_account" />
+			<field name="state">code</field>
+			<field name="code">action = obj.action_sum_of_fields(context=context)</field>
+		</record>
+		
+		<record model="ir.values" id="ir_recalcul_contracts">
+			<field name="key2">client_action_multi</field>
+			<field name="model">account.analytic.account</field>
+			<field name="name">Reprocess total to invoice</field>
+			<field name="value" eval="'ir.actions.server,%d'%action_reprocess_total_toinvoice" />
+		</record>
+		
+		<record id="bss_contract_fix_view" model="ir.ui.view">
+			<field name="name">bss_contract_fix_perf.contract_view.tree</field>
+			<field name="model">account.analytic.account</field>
+			<field name="inherit_id" ref="account_analytic_analysis.view_account_analytic_account_tree_c2c_3" />
+			<field name="arch" type="xml">
+				<field name="toinvoice_total" position="replace">
+					<field name="toinvoice_total_aprox" />
+					<field name="last_reprocess" />
+				</field>
+			</field>
+		</record>
+	</data>
+</openerp>
