@@ -2,7 +2,7 @@
 ##############################################################################
 #    
 #    OpenERP, Open Source Management Solution
-#    Copyright (C) 2012-2013 Bluestar Solutions Sàrl (<http://www.blues2.ch>).
+#    Copyright (C) 2013 Bluestar Solutions Sàrl (<http://www.blues2.ch>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -20,18 +20,26 @@
 ##############################################################################
 
 {
-    'name': 'Fix contract performances',
+    'name': 'Contract Performance Improvement',
     'version': 'master',
     "category" : 'Bluestar/Generic web module',
-    'complexity': "easy",
+    'complexity': "easy", 
     'description': """
-Total amount remaining to invoice is now processed only on demand in tree view.
+Contract Performance Improvement
+================================
+
+Process the "Total to Invoice" field only on demand in the contract tree view.
+
 Other views and background calculations are not affected.
-""",
-    'update_xml': ['bss_contract_fix_view.xml'],
+    """,
     'author': 'Bluestar Solutions Sàrl',
     'website': 'http://www.blues2.ch',
     'depends': ['account_analytic_analysis'],
+    'update_xml': ['bss_contract_fix_view.xml'],
+    'demo_xml': [],
+    'test': [],
+    'installable': True,
+    'application': False,
     'auto_install': False,
 }
 
