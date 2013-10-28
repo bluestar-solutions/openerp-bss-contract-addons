@@ -20,14 +20,13 @@
 ##############################################################################
 
 from openerp.osv import fields, osv
-import random
 from datetime import datetime
 
 class bss_contract_fix(osv.osv):
     _inherit = "account.analytic.account"
     
     def action_sum_of_fields(self, cr, uid, ids, context=None):
-        self.write(cr, uid, context['active_ids'], {'need_reprocess': random.randint(0,100)})
+        self.write(cr, uid, context['active_ids'], {'need_reprocess': 1})
     
     def _toinvoice_aprox(self, cr, uid, ids, name, arg, context=None):
         totals = super(bss_contract_fix, self)._sum_of_fields(cr, uid, ids, name, arg, context)
