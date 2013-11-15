@@ -21,7 +21,7 @@
 
 {
     'name': 'Contract Performance Improvement',
-    'version': 'master',
+    'version': '7.0.1.0',
     "category" : 'Bluestar/Generic web module',
     'complexity': "easy", 
     'description': """
